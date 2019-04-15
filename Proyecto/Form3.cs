@@ -22,6 +22,7 @@ namespace Proyecto {
             string seleccion = "Select * from empleados";
             if (conexionBD.AbrirConexion())
             {
+                dgvEmpleados.AutoGenerateColumns = false;
                 dgvEmpleados.DataSource = Empleado.BuscarEmpleado(conexionBD.Conexion, seleccion);
                 conexionBD.CerrarConexion();
             }
