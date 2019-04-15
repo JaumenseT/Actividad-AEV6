@@ -57,11 +57,11 @@
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblId.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblId.Location = new System.Drawing.Point(736, 139);
+            this.lblId.Location = new System.Drawing.Point(713, 136);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(46, 32);
+            this.lblId.Size = new System.Drawing.Size(70, 32);
             this.lblId.TabIndex = 16;
-            this.lblId.Text = "Id:";
+            this.lblId.Text = "DNI:";
             // 
             // txtId
             // 
