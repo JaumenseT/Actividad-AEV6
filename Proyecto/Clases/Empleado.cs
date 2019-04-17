@@ -28,9 +28,13 @@ namespace Proyecto.Clases {
             this.contrasenya = contrasenya;
         }
 
+        public Empleado() {
+
+        }
+
         public int AgregarEmpleado(MySqlConnection connection, Empleado emp) {
             int retorno;
-            string consulta = "INSERT INTO usuarios (id,nombre,apellidos,admin,contraseña) VALUES " +
+            string consulta = "INSERT INTO empleados (id,nombre,apellidos,admin,contraseña) VALUES " +
                 "(@id, @nombre, @apellidos, @admin, @contraseña)";
 
             // Trim: elimina espacios innecesarios en strings.
@@ -43,6 +47,15 @@ namespace Proyecto.Clases {
 
             retorno = comando.ExecuteNonQuery();
 
+            return retorno;
+        }
+
+        public static int EliminaUsuario(MySqlConnection conexion, string id)
+        {
+            int retorno;
+            string consulta = string.Format("DELETE FROM empleados WHERE id={0}", id);
+            MySqlCommand comando = new MySqlCommand(consulta, conexion);
+            retorno = comando.ExecuteNonQuery();
             return retorno;
         }
 
