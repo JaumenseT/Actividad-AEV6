@@ -42,6 +42,7 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,7 +152,8 @@
             this.Id,
             this.Nombre,
             this.Apellidos,
-            this.Admin});
+            this.Admin,
+            this.Contraseña});
             this.dgvEmpleados.Location = new System.Drawing.Point(12, 97);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowTemplate.Height = 24;
@@ -228,6 +230,13 @@
             this.Admin.Name = "Admin";
             this.Admin.ReadOnly = true;
             // 
+            // Contraseña
+            // 
+            this.Contraseña.DataPropertyName = "Contrasenya";
+            this.Contraseña.HeaderText = "Contraseña";
+            this.Contraseña.Name = "Contraseña";
+            this.Contraseña.ReadOnly = true;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,6 +259,7 @@
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblTitulo);
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
@@ -279,5 +289,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Admin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
     }
 }
