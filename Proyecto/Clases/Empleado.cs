@@ -32,13 +32,13 @@ namespace Proyecto.Clases {
 
         }
 
-        public int AgregarEmpleado(MySqlConnection connection, Empleado emp) {
+        public int AgregarEmpleado(MySqlConnection conexion, Empleado emp) {
             int retorno;
             string consulta = "INSERT INTO empleados (id,nombre,apellidos,admin,contraseña) VALUES " +
-                "(@id, @nombre, @apellidos, @admin, @contraseña)";
+                "(@id, @nombre, @apellidos, @admin, md5(@contraseña))";
 
             // Trim: elimina espacios innecesarios en strings.
-            MySqlCommand comando = new MySqlCommand(consulta, connection);
+            MySqlCommand comando = new MySqlCommand(consulta, conexion);
             comando.Parameters.AddWithValue("@id", emp.id.Trim());
             comando.Parameters.AddWithValue("@nombre", emp.nombre.Trim());
             comando.Parameters.AddWithValue("@apellidos", emp.apellidos.Trim());
@@ -50,11 +50,12 @@ namespace Proyecto.Clases {
             return retorno;
         }
 
-        public static int EliminaUsuario(MySqlConnection conexion, string id)
+        public static int EliminaEmpleado(MySqlConnection conexion, string id)
         {
             int retorno;
-            string consulta = string.Format("DELETE FROM empleados WHERE id={0}", id);
+            string consulta = ("DELETE FROM empleados WHERE id=@id");
             MySqlCommand comando = new MySqlCommand(consulta, conexion);
+            comando.Parameters.AddWithValue("@id", id);
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
@@ -80,6 +81,24 @@ namespace Proyecto.Clases {
             }
             // devolvemos la lista cargada con los usuarios.
             return lista;
+        }
+
+        public static bool ComprobarUsuarioAdmin(MySqlConnection conexion, string id, string contrasenya) //Función para comprobar si se accede con el ususario de admin
+        {   
+            string consulta = ("SELECT id, contraseña FROM empleados where id=@id AND contraseña=md5(@contrasenya) AND admin=1;");
+            MySqlCommand comando = new MySqlCommand(consulta, conexion);
+
+            comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@contrasenya", contrasenya);
+
+            MySqlDataReader reader = comando.ExecuteReader();
+            if (reader.Read()) {
+                reader.Close();
+                return true;
+            }
+            reader.Close();
+            return false;
+            
         }
     }
 }

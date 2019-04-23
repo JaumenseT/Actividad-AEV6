@@ -26,7 +26,7 @@
             this.components = new System.ComponentModel.Container();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAcceder = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtContrasenya = new System.Windows.Forms.TextBox();
             this.lblContrasenya = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblDni = new System.Windows.Forms.Label();
@@ -67,14 +67,14 @@
             this.btnAcceder.UseVisualStyleBackColor = false;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
-            // txtPassword
+            // txtContrasenya
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(39, 246);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(235, 49);
-            this.txtPassword.TabIndex = 18;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtContrasenya.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenya.Location = new System.Drawing.Point(39, 246);
+            this.txtContrasenya.Name = "txtContrasenya";
+            this.txtContrasenya.Size = new System.Drawing.Size(235, 49);
+            this.txtContrasenya.TabIndex = 18;
+            this.txtContrasenya.UseSystemPasswordChar = true;
             // 
             // lblContrasenya
             // 
@@ -141,7 +141,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAcceder);
-            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtContrasenya);
             this.Controls.Add(this.lblContrasenya);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblDni);
@@ -159,7 +159,7 @@
 
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAcceder;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtContrasenya;
         private System.Windows.Forms.Label lblContrasenya;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblDni;

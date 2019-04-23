@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 
 namespace Proyecto.Clases {
     class ConexionBD {
@@ -46,5 +47,6 @@ namespace Proyecto.Clases {
                 return false;
             }
         }
+        
     }
 }
